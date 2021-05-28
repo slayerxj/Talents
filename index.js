@@ -17,6 +17,10 @@ app.get('/persons', (req, res) => {
   res.sendFile(__dirname + '/public/persons.html')
 })
 
+app.get('/person', (req, res) => {
+  res.sendFile(__dirname + '/public/person.html')
+})
+
 // app.get('/', (req, res) => {
 //   res.sendFile(__dirname + '/public/index.html')
 // })
@@ -38,8 +42,17 @@ let db;
 
 app.get('/api/companies', async (req, res) => {
   let sql = `SELECT * FROM companies`;
-  const a = await db.all(sql);
-  res.send(a);
+  res.send(await db.all(sql));
+})
+
+app.get('/api/persons', async (req, res) => {
+  let sql = `SELECT * FROM persons`;
+  res.send(await db.all(sql));
+})
+
+app.get('/api/person', async (req, res) => {
+  let sql = `SELECT * FROM persons WHERE uuid='` + req.query.id + "'";
+  res.send(await db.all(sql));
 })
 
 app.listen(port, () => {

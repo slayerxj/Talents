@@ -21,6 +21,10 @@ app.get('/person', (req, res) => {
   res.sendFile(__dirname + '/public/person.html')
 })
 
+app.get('/company', (req, res) => {
+  res.sendFile(__dirname + '/public/company.html')
+})
+
 // app.get('/', (req, res) => {
 //   res.sendFile(__dirname + '/public/index.html')
 // })
@@ -52,6 +56,11 @@ app.get('/api/persons', async (req, res) => {
 
 app.get('/api/person', async (req, res) => {
   let sql = `SELECT * FROM persons WHERE uuid='` + req.query.id + "'";
+  res.send(await db.all(sql));
+})
+
+app.get('/api/company', async (req, res) => {
+  let sql = `SELECT * FROM companies WHERE uuid='` + req.query.id + "'";
   res.send(await db.all(sql));
 })
 

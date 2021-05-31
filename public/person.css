@@ -1,3 +1,8 @@
-#name {
-    font-size: x-large;
+#main {
+  margin: auto;
+}
+
+input {
+  width: 500px !important;
+  text-align: center;
 }

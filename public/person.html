@@ -4,70 +4,199 @@
     <meta charset="UTF-8" />
     <link href="main.css" rel="stylesheet" type="text/css" />
     <link href="person.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
   </head>
 
   <body>
-    <div class="grid-container">
-      <div id="information">
-        <div>
-          <label for="name">姓名</label>
-          <input type="text" name="name" id="name" readonly/>
-        </div>
-        <div>
-          <label for="gender">性别</label>
-          <input type="text" name="gender" id="gender" readonly/>
-        </div>
-        <div>
-          <label for="age">年龄</label>
-          <input type="text" name="age" id="age" readonly/>
-        </div>
-        <div>
-          <label for="birth">出生日期</label>
-          <input type="text" name="birth" id="birth" readonly/>
-        </div>
-      </div>
+    <div id="main">
+      <div class="grid-container">
+        <div id="information">
+          <div>
+            <label class="mdc-text-field mdc-text-field--filled">
+              <span class="mdc-text-field__ripple"></span>
+              <span class="mdc-floating-label" id="my-name-id">姓名</span>
+              <input
+                class="mdc-text-field__input"
+                type="text"
+                aria-labelledby="my-name-id"
+                id="name"
+              />
+              <span class="mdc-line-ripple"></span>
+            </label>
+          </div>
 
-      <div id="contact">
-        <div>
-          <label for="mobile">手机</label>
-          <input type="text" name="mobile" id="mobile" readonly/>
-        </div>
-        <div>
-          <label for="phone">座机</label>
-          <input type="text" name="phone" id="phone" readonly/>
-        </div>
-        <div>
-          <label for="email">邮箱</label>
-          <input type="email" name="email" id="email" readonly/>
-        </div>
-      </div>
-      <div id="education">
-        <div>
-          <label for="edu">学历</label>
-          <input type="text" name="edu" id="edu" readonly/>
-        </div>
-        <div>
-          <label for="gradu">毕业院校</label>
-          <input type="text" name="gradu" id="gradu" readonly/>
-        </div>
-      </div>
+          <div>
+            <label class="mdc-text-field mdc-text-field--filled">
+              <span class="mdc-text-field__ripple"></span>
+              <span class="mdc-floating-label" id="my-label-id">性别</span>
+              <input
+                class="mdc-text-field__input"
+                type="text"
+                aria-labelledby="my-label-id"
+                id="gender"
+              />
+              <span class="mdc-line-ripple"></span>
+            </label>
+          </div>
 
-      <div id="position">
-        <div>
-          <label for="company">所在公司</label>
-          <input type="text" name="company" id="company" readonly/>
+          <div>
+            <label class="mdc-text-field mdc-text-field--filled">
+              <span class="mdc-text-field__ripple"></span>
+              <span class="mdc-floating-label" id="my-label-id">年龄</span>
+              <input
+                class="mdc-text-field__input"
+                type="text"
+                aria-labelledby="my-label-id"
+                id="age"
+              />
+              <span class="mdc-line-ripple"></span>
+            </label>
+          </div>
+
+          <!-- <div>
+            <label class="mdc-text-field mdc-text-field--filled">
+              <span class="mdc-text-field__ripple"></span>
+              <span class="mdc-floating-label" id="my-label-id">出生日期</span>
+              <input
+                class="mdc-text-field__input"
+                type="text"
+                aria-labelledby="my-label-id"
+                id="birthDate"
+              />
+              <span class="mdc-line-ripple"></span>
+            </label>
+          </div> -->
         </div>
-        <div>
-          <label for="posi">职位</label>
-          <input type="text" name="posi" id="posi" readonly/>
+
+        <div id="contact">
+          <div>
+            <label class="mdc-text-field mdc-text-field--filled">
+              <span class="mdc-text-field__ripple"></span>
+              <span class="mdc-floating-label" id="my-label-id">手机</span>
+              <input
+                class="mdc-text-field__input"
+                type="text"
+                aria-labelledby="my-label-id"
+                id="mobile"
+              />
+              <span class="mdc-line-ripple"></span>
+            </label>
+          </div>
+
+          <div>
+            <label class="mdc-text-field mdc-text-field--filled">
+              <span class="mdc-text-field__ripple"></span>
+              <span class="mdc-floating-label" id="my-label-id">座机</span>
+              <input
+                class="mdc-text-field__input"
+                type="text"
+                aria-labelledby="my-label-id"
+                id="phone"
+              />
+              <span class="mdc-line-ripple"></span>
+            </label>
+          </div>
+
+          <div>
+            <label class="mdc-text-field mdc-text-field--filled">
+              <span class="mdc-text-field__ripple"></span>
+              <span class="mdc-floating-label" id="my-label-id">邮箱</span>
+              <input
+                class="mdc-text-field__input"
+                type="text"
+                aria-labelledby="my-label-id"
+                id="email"
+              />
+              <span class="mdc-line-ripple"></span>
+            </label>
+          </div>
         </div>
-        <div>
-          <label for="salary">薪资</label>
-          <input type="text" name="salary" id="salary" readonly/>
+
+        <div id="education">
+          <div>
+            <label class="mdc-text-field mdc-text-field--filled">
+              <span class="mdc-text-field__ripple"></span>
+              <span class="mdc-floating-label" id="my-label-id">学历</span>
+              <input
+                class="mdc-text-field__input"
+                type="text"
+                aria-labelledby="my-label-id"
+                id="edu"
+              />
+              <span class="mdc-line-ripple"></span>
+            </label>
+          </div>
+
+          <div>
+            <label class="mdc-text-field mdc-text-field--filled">
+              <span class="mdc-text-field__ripple"></span>
+              <span class="mdc-floating-label" id="my-label-id">毕业院校</span>
+              <input
+                class="mdc-text-field__input"
+                type="text"
+                aria-labelledby="my-label-id"
+                id="gradu"
+              />
+              <span class="mdc-line-ripple"></span>
+            </label>
+          </div>
+        </div>
+
+        <div id="position">
+          <div>
+            <label class="mdc-text-field mdc-text-field--filled">
+              <span class="mdc-text-field__ripple"></span>
+              <span class="mdc-floating-label" id="my-label-id">所在公司</span>
+              <input
+                class="mdc-text-field__input"
+                type="text"
+                aria-labelledby="my-label-id"
+                id="company"
+              />
+              <span class="mdc-line-ripple"></span>
+            </label>
+          </div>
+
+          <div>
+            <label class="mdc-text-field mdc-text-field--filled">
+              <span class="mdc-text-field__ripple"></span>
+              <span class="mdc-floating-label" id="my-label-id">职位</span>
+              <input
+                class="mdc-text-field__input"
+                type="text"
+                aria-labelledby="my-label-id"
+                id="posi"
+              />
+              <span class="mdc-line-ripple"></span>
+            </label>
+          </div>
+
+          <div>
+            <label class="mdc-text-field mdc-text-field--filled">
+              <span class="mdc-text-field__ripple"></span>
+              <span class="mdc-floating-label" id="my-label-id">薪资</span>
+              <input
+                class="mdc-text-field__input"
+                type="text"
+                aria-labelledby="my-label-id"
+                id="salary"
+              />
+              <span class="mdc-line-ripple"></span>
+            </label>
+          </div>
         </div>
       </div>
-
     </div>
+
+    <script>
+      mdc.textField.MDCTextField.attachTo(
+        document.querySelector(".mdc-text-field")
+      );
+    </script>
   </body>
   <script src="person.js"></script>
 </html>

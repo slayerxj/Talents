@@ -10,16 +10,33 @@ fetch("/api/person?id=" + s)
       firstName = a.gender === "male" ? "先生" : "女士";
     }
     document.getElementById("name").value = a.lastName + firstName;
-    document.getElementById("company").value = a.company;
-    document.getElementById("company").onclick =()=> {
+    document.getElementById("company").value = a.companyName;
+    document.getElementById("company").onclick = () => {
       document.location.href = `/company?id=${a.company}`;
     }
     document.getElementById("email").value = a.email;
-    document.getElementById("email").onclick = ()=> {
-        document.location.href = "mailto:" +a.email;
+    document.getElementById("email").onclick = () => {
+      document.location.href = "mailto:" + a.email;
     }
-    document.getElementById("gender").value = a.gender === "male" ? "男":"女";
+    document.getElementById("gender").value = a.gender === "male" ? "男" : "女";
     document.getElementById("mobile").value = a.mobilePhone;
     document.getElementById("salary").value = a.salary;
+    const c = JSON.parse(a.communication);
+    const logs = document.getElementById("communication-log");
+    const b = document.createElement("textarea");
+    logs.appendChild(b);
+    c.forEach((comment) => {
+      const b = document.createElement("textarea");
+      b.value = comment;
+      logs.appendChild(b);
+    });
+
+    if (a.resume) {
+      const b = document.createElement("a");
+      b.href = "/files/" + a.resume;
+      b.value = a.resume;
+      const c = document.getElementById("resume");
+      c.appendChild(b);
+    }
   })
   .catch((err) => console.log(err));

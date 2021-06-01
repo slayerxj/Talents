@@ -1,0 +1,8 @@
+#design detail
+    textarea should be two columns, one is the time stamp, the other one is content.
+    The time stamp should be sticky, and the content will be auto strech height.
+    The edited textarea should not be modified default, but provide two buttons: edit / delete
+    And there is a blank textarea can be edited any time, lose focus to add or "add" to add?
+
+    store file as file path or blob?
+    

@@ -1,12 +1,12 @@
 .grid-container {
-    display: grid;
-    grid-template-columns: auto auto;
+  display: grid;
+  grid-template-columns: auto auto;
 }
 
 input:read-only {
-    border: none;
+  border: none;
 }
 
 div {
-    width: fit-content;
+  width: fit-content;
 }

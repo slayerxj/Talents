@@ -12,11 +12,12 @@ fetch("/api/persons")
       if (!datum.firstName) {
         firstName = datum.gender === "male" ? "先生" : "女士";
       }
-      nameDiv.innerHTML = datum.lastName + firstName;
+
+      nameDiv.innerHTML = (datum.lastName ? datum.lastName : "") + firstName;
       div.appendChild(nameDiv);
 
       const comDiv = document.createElement("div");
-      comDiv.innerHTML = datum.company;
+      comDiv.innerHTML = datum.companyName ? datum.companyName : datum.company;
       div.appendChild(comDiv);
     })
   })

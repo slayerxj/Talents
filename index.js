@@ -1,7 +1,10 @@
 const express = require('express');
+const bodyParser = require('body-parser')
 const query = require('./src/query');
 const app = express();
 const port = 3000;
+
+const uuid = require('uuid');
 
 app.use(express.static('public'));
 
@@ -51,6 +54,15 @@ app.get('/api/companies', async (req, res) => {
 
 app.get('/api/persons', async (req, res) => {
   let sql = `SELECT * FROM persons`;
+  res.send(await db.all(sql));
+})
+
+app.post('/api/persons', bodyParser.json(), async (req, res) => {
+  const data = req.body;
+  data.uuid = uuid.v4();
+  const columns = Object.keys(data).join();
+  const values = Object.values(data).map((value) => `'${value}'`).join();
+  let sql = `INSERT INTO persons (${columns}) VALUES (${values})`;
   res.send(await db.all(sql));
 })
 

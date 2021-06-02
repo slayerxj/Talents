@@ -11,8 +11,14 @@ input {
   width: 30rem;
 }
 
+select {
+  margin-left: 2rem;
+  font-size: x-large;
+  width: 30rem;
+}
+
 .flex-container {
-  margin: auto;
+  
   display: flex;
   flex-flow: column wrap;
 }
@@ -27,6 +33,14 @@ input {
 
 #communication-log {
   padding: 3rem;
+}
+
+#apply-person {
+  float: right;
+  visibility: hidden;
+}
+
+#main-frame {
   margin: auto;
 }
 

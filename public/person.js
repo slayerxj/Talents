@@ -11,11 +11,11 @@ if (s) {
       document.getElementById("company").value = a.companyName;
       document.getElementById("company").onclick = () => {
         document.location.href = `/company?id=${a.company}`;
-      }
+      };
       document.getElementById("email").value = a.email;
       document.getElementById("email").onclick = () => {
         document.location.href = "mailto:" + a.email;
-      }
+      };
       document.getElementById("gender").value = a.gender;
       document.getElementById("mobile").value = a.mobilePhone;
       document.getElementById("salary").value = a.salary;
@@ -23,6 +23,7 @@ if (s) {
       const logs = document.getElementById("communication-log");
       c.forEach((comment) => {
         const b = document.createElement("textarea");
+        b.className = "fd-textarea";
         b.value = comment;
         logs.appendChild(b);
       });
@@ -37,35 +38,36 @@ if (s) {
     })
     .catch((err) => console.log(err));
 } else {
-  const cells = document.getElementsByTagName('input');
+  const cells = document.getElementsByTagName("input");
 
   for (let cell of cells) {
-    cell.removeAttribute("readonly")
+    cell.removeAttribute("readonly");
   }
 
-  const applyButton = document.getElementById('apply-person');
+  const applyButton = document.getElementById("apply-person");
   applyButton.style.visibility = "visible";
 
   applyButton.onclick = () => {
     const data = {
-      firstName: document.getElementById('firstName').value,
-      lastName: document.getElementById('lastName').value,
-      mobilePhone: document.getElementById('mobile').value,
-      gender: document.getElementById('gender').value,
+      firstName: document.getElementById("firstName").value,
+      lastName: document.getElementById("lastName").value,
+      mobilePhone: document.getElementById("mobile").value,
+      gender: document.getElementById("gender").value,
     };
 
-    fetch('/api/persons', {
-      method: 'POST', // or 'PUT'
+    fetch("/api/persons", {
+      method: "POST", // or 'PUT'
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
-    }).then(response => response.json())
-      .then(data => {
-        console.log('Success:', data);
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data);
       })
       .catch((error) => {
-        console.error('Error:', error);
+        console.error("Error:", error);
       });
-  }
+  };
 }

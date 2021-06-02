@@ -1,7 +1,13 @@
 #mainView {
+    width: 800px;
     margin: auto;
 }
 
 #recent-visited {
+    width: 100%;
     margin-top: 1rem;
+}
+
+table {
+    width: 100%;
 }

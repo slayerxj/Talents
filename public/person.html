@@ -1,78 +1,80 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <link href="main.css" rel="stylesheet" type="text/css" />
-    <link href="person.css" rel="stylesheet" type="text/css" />
-  </head>
 
-  <body>
-    <div id="main-frame">
-      <div class="flex-container">
-        <div class="flex-item">
-          <label for="lastName">姓</label>
-          <input type="text" name="lastName" id="lastName" readonly />
-        </div>
-        <div class="flex-item">
-          <label for="firstName">名</label>
-          <input type="text" name="firstName" id="firstName" readonly />
-        </div>
-        <div class="flex-item">
-          <label for="gender">性别</label>
-          <select name="gender" id="gender">
-            <option value="male">男</option>
-            <option value="female">女</option>
-          </select>
-        </div>
-        <div class="flex-item">
-          <label for="age">年龄</label>
-          <input type="text" name="age" id="age" readonly />
-        </div>
-        <div class="flex-item">
-          <label for="birth">出生日期</label>
-          <input type="text" name="birth" id="birth" readonly />
-        </div>
-        <div class="flex-item">
-          <label for="mobile">手机</label>
-          <input type="text" name="mobile" id="mobile" readonly />
-        </div>
-        <div class="flex-item">
-          <label for="phone">座机</label>
-          <input type="text" name="phone" id="phone" readonly />
-        </div>
-        <div class="flex-item">
-          <label for="email">邮箱</label>
-          <input type="email" name="email" id="email" readonly />
-        </div>
-        <div class="flex-item">
-          <label for="edu">学历</label>
-          <input type="text" name="edu" id="edu" readonly />
-        </div>
-        <div class="flex-item">
-          <label for="gradu">毕业院校</label>
-          <input type="text" name="gradu" id="gradu" readonly />
-        </div>
-        <div class="flex-item">
-          <label for="company">所在公司</label>
-          <input type="text" name="company" id="company" readonly />
-        </div>
-        <div class="flex-item">
-          <label for="posi">职位</label>
-          <input type="text" name="posi" id="posi" readonly />
-        </div>
-        <div class="flex-item">
-          <label for="salary">薪资</label>
-          <input type="text" name="salary" id="salary" readonly />
-        </div>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <link href="fundamental-styles.css" rel="stylesheet" type="text/css" />
+  <link href="person.css" rel="stylesheet" type="text/css" />
+</head>
 
-      <div id="communication-log" class="flex-container">
-        <p>联络记录</p>
-        <textarea></textarea>
+<body>
+  <div id="main-frame">
+    <div class="flex-container">
+      <div class="flex-item">
+        <label for="lastName">姓</label>
+        <input type="text" name="lastName" id="lastName" readonly />
       </div>
-      <div id="resume" class="flex-container"></div>
-      <button id="apply-person">提交</button>
+      <div class="flex-item">
+        <label for="firstName">名</label>
+        <input type="text" name="firstName" id="firstName" readonly />
+      </div>
+      <div class="flex-item">
+        <label for="gender">性别</label>
+        <select name="gender" id="gender">
+          <option value="male">男</option>
+          <option value="female">女</option>
+        </select>
+      </div>
+      <div class="flex-item">
+        <label for="age">年龄</label>
+        <input type="text" name="age" id="age" readonly />
+      </div>
+      <div class="flex-item">
+        <label for="birth">出生日期</label>
+        <input type="text" name="birth" id="birth" readonly />
+      </div>
+      <div class="flex-item">
+        <label for="mobile">手机</label>
+        <input type="text" name="mobile" id="mobile" readonly />
+      </div>
+      <div class="flex-item">
+        <label for="phone">座机</label>
+        <input type="text" name="phone" id="phone" readonly />
+      </div>
+      <div class="flex-item">
+        <label for="email">邮箱</label>
+        <input type="email" name="email" id="email" readonly />
+      </div>
+      <div class="flex-item">
+        <label for="edu">学历</label>
+        <input type="text" name="edu" id="edu" readonly />
+      </div>
+      <div class="flex-item">
+        <label for="gradu">毕业院校</label>
+        <input type="text" name="gradu" id="gradu" readonly />
+      </div>
+      <div class="flex-item">
+        <label for="company">所在公司</label>
+        <input type="text" name="company" id="company" readonly />
+      </div>
+      <div class="flex-item">
+        <label for="posi">职位</label>
+        <input type="text" name="posi" id="posi" readonly />
+      </div>
+      <div class="flex-item">
+        <label for="salary">薪资</label>
+        <input type="text" name="salary" id="salary" readonly />
+      </div>
     </div>
-  </body>
-  <script src="person.js"></script>
+
+    <div id="communication-log" class="flex-container">
+      <p>联络记录</p>
+      <textarea class="fd-textarea"></textarea>
+    </div>
+    <div id="resume" class="flex-container"></div>
+    <button id="apply-person">提交</button>
+  </div>
+</body>
+<script src="person.js"></script>
+
 </html>

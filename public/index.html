@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <link href="main.css" rel="stylesheet" type="text/css" />
-    <link href="index.css" rel="stylesheet" type="text/css" />
-    <link href="fundamental-styles.css" rel="stylesheet" type="text/css" />
-  </head>
 
-  <body>
-    <div id="mainView">
-      <button onclick="location.href = '/companies';">Show all company</button>
-      <button onclick="alert('Add a company')">Add a company</button>
-      <button onclick="location.href = '/persons';">Show all persons</button>
-      <button onclick="location.href = '/person';">Add a person</button>
-      <div id="recent-visited" >
+<head>
+  <meta charset="UTF-8" />
+  <link href="main.css" rel="stylesheet" type="text/css" />
+  <link href="index.css" rel="stylesheet" type="text/css" />
+  <link href="fundamental-styles.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id="mainView">
+    <div id="test-buttons">
+      <button class="fd-button" onclick="location.href = '/companies';">Show all company</button>
+      <button class="fd-button" onclick="location.href = '/company';">Add a company</button>
+      <button class="fd-button" onclick="location.href = '/persons';">Show all persons</button>
+      <button class="fd-button" onclick="location.href = '/person';">Add a person</button>
+    </div>
+    <div id="main-search"></div>
+    <div id="recent-visited">
       <div class="fd-toolbar fd-toolbar--solid fd-toolbar--title fd-toolbar-active">
         <h4 style="margin: 0;">最近访问</h4>
         <span class="fd-toolbar__spacer fd-toolbar__spacer--auto"></span>
@@ -32,7 +36,8 @@
         </tbody>
       </table>
     </div>
-    </div>
-  </body>
-  <script src="index.js"></script>
+  </div>
+</body>
+<script src="index.js"></script>
+
 </html>

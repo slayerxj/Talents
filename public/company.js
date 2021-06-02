@@ -8,8 +8,8 @@ fetch("/api/company?id=" + s)
 
     document.getElementById("name").value = a.name;
     document.getElementById("url").value = a.url;
-    document.getElementById("url").onclick =()=> {
-        window.open(a.url, '_blank');
-    }
+    document.getElementById("url").onclick = () => {
+      window.open(a.url, "_blank");
+    };
   })
   .catch((err) => console.log(err));

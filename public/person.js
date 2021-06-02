@@ -2,6 +2,16 @@ const params = new URLSearchParams(document.location.search);
 const s = params.get("id");
 
 if (s) {
+  const asdfa = document.cookie.split("; ").find((row) => row.startsWith("recentVisited="));
+  const recentVisited = asdfa ? asdfa.split("=")[1].split(" ") : [];
+
+  if (recentVisited.length > 5) {
+    recentVisited.pop();
+  }
+
+  recentVisited.unshift(s);
+
+  document.cookie = "recentVisited=" + recentVisited.join(" ");
   fetch("/api/person?id=" + s)
     .then((res) => res.json())
     .then((data) => {
@@ -16,17 +26,20 @@ if (s) {
       document.getElementById("email").onclick = () => {
         document.location.href = "mailto:" + a.email;
       };
-      document.getElementById("gender").value = a.gender;
+      document.getElementById("gender").value = a.gender === "male" ? "男" : "女";
       document.getElementById("mobile").value = a.mobilePhone;
       document.getElementById("salary").value = a.salary;
       const c = JSON.parse(a.communication);
-      const logs = document.getElementById("communication-log");
-      c.forEach((comment) => {
-        const b = document.createElement("textarea");
-        b.className = "fd-textarea";
-        b.value = comment;
-        logs.appendChild(b);
-      });
+      if (c) {
+        const logs = document.getElementById("communication-log");
+        c.forEach((comment) => {
+          const b = document.createElement("textarea");
+          b.className = "fd-textarea";
+          b.setAttribute("readonly", true);
+          b.value = comment;
+          logs.appendChild(b);
+        });
+      }
 
       if (a.resume) {
         const b = document.createElement("a");

@@ -1,4 +1,61 @@
+label {
+  display: inline-block;
+  width: 10rem;
+  text-align: right;
+  font-size: large;
+}
+
+input {
+  margin-left: 2rem;
+  font-size: x-large;
+  width: 30rem;
+}
+
+select {
+  margin-left: 2rem;
+  font-size: x-large;
+  width: 30rem;
+}
+
+.flex-container {
+  
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.flex-item {
+  padding: 0.5rem;
+}
+
+#name {
+  font-size: xx-large;
+}
+
+#communication-log {
+  padding: 3rem;
+}
+
+#apply-person {
+  float: right;
+  visibility: hidden;
+}
+
 #main-frame {
   margin: auto;
-  max-width: 800px;
+  width: 800px;
+}
+
+textarea {
+  margin: 0.25rem;
+  width: 40rem;
+  height: 3rem;
+  resize: none;
+}
+
+input:read-only {
+  border: none;
+}
+
+select:read-only {
+  border: none;
 }

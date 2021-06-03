@@ -11,7 +11,11 @@ if (s) {
 
   recentVisited.unshift(s);
 
-  document.cookie = "recentVisited=" + recentVisited.join(" ");
+  document.cookie =
+    "recentVisited=" +
+    recentVisited.join(" ") +
+    "; Expires=" +
+    new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toUTCString();
   fetch("/api/person?id=" + s)
     .then((res) => res.json())
     .then((data) => {

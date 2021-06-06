@@ -69,7 +69,11 @@ app.post("/api/persons", bodyParser.json(), async (req, res) => {
 });
 
 app.get("/api/person", async (req, res) => {
-  let sql = `SELECT * FROM persons WHERE uuid='` + req.query.id + "'";
+  if (req.query.id) {
+    var sql = `SELECT * FROM persons WHERE uuid='` + req.query.id + "'";
+  } else if (req.query.name) {
+    var sql = `SELECT * FROM persons WHERE firstName='${req.query.name}'`;
+  }
   res.send(await db.all(sql));
 });
 

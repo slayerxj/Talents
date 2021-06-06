@@ -5,15 +5,21 @@ recentVisited.forEach((item) => {
   fetch("/api/person?id=" + item)
     .then((res) => res.json())
     .then((data) => {
-      const a = data[0];
+      const person = data[0];
       const row = document.createElement("tr");
       row.className = "fd-table__row";
 
       row.onclick = () => {
-        document.location.href = `/person?id=${a.uuid}`;
+        document.location.href = `/person?id=${person.uuid}`;
       };
 
-      const content = [a.lastName + a.firstName, a.title, a.companyName, a.salary, new Date(a.lastModified).toLocaleString()];
+      const content = [
+        person.lastName + person.firstName,
+        person.title,
+        person.companyName,
+        person.salary,
+        new Date(person.lastModified).toLocaleString(),
+      ];
       content.forEach((datum) => {
         const cell = document.createElement("td");
         cell.className = "fd-table__cell";

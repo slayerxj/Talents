@@ -3,5 +3,6 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "prettier.printWidth": 140
+  "prettier.printWidth": 140,
+  "editor.formatOnSave": true
 }

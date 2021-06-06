@@ -29,39 +29,39 @@ fetch("/api/person?id=" + personId)
   .then((res) => res.json())
   .then((data) => {
     handleRecentVisitedCookie();
-    const a = data[0];
-    document.getElementById("lastName").value = a.lastName;
-    document.getElementById("firstName").value = a.firstName;
-    document.getElementById("company").value = a.companyName;
+    const person = data[0];
+    document.getElementById("lastName").value = person.lastName;
+    document.getElementById("firstName").value = person.firstName;
+    document.getElementById("company").value = person.companyName;
     document.getElementById("company").onclick = () => {
-      document.location.href = `/company?id=${a.company}`;
+      document.location.href = `/company?id=${person.company}`;
     };
-    document.getElementById("email").value = a.email;
+    document.getElementById("email").value = person.email;
     document.getElementById("email").onclick = () => {
-      document.location.href = "mailto:" + a.email;
+      document.location.href = "mailto:" + person.email;
     };
-    document.getElementById("gender").value = a.gender === "male" ? "男" : "女";
-    document.getElementById("mobile").value = a.mobilePhone;
-    document.getElementById("salary").value = a.salary;
+    document.getElementById("gender").value = person.gender === "male" ? "男" : "女";
+    document.getElementById("mobile").value = person.mobilePhone;
+    document.getElementById("salary").value = person.salary;
 
-    const c = JSON.parse(a.communication);
-    if (c) {
+    const communicationLogs = JSON.parse(person.communication);
+    if (communicationLogs) {
       const logs = document.getElementById("communication-log");
-      c.forEach((comment) => {
-        const b = document.createElement("textarea");
-        b.className = "fd-textarea";
-        b.setAttribute("readonly", true);
-        b.value = comment;
-        logs.appendChild(b);
+      communicationLogs.forEach((comment) => {
+        const logArea = document.createElement("textarea");
+        logArea.className = "fd-textarea";
+        logArea.setAttribute("readonly", true);
+        logArea.value = comment;
+        logs.appendChild(logArea);
       });
     }
 
-    if (a.resume) {
-      const b = document.createElement("a");
-      b.href = "/files/" + a.resume;
-      b.innerText = a.resume;
-      const c = document.getElementById("resume");
-      c.appendChild(b);
+    if (person.resume) {
+      const resumeDownload = document.createElement("a");
+      resumeDownload.href = "/files/" + person.resume;
+      resumeDownload.innerText = person.resume;
+      const resumeDiv = document.getElementById("resume");
+      resumeDiv.appendChild(resumeDownload);
     }
   })
   .catch((err) => console.log(err));

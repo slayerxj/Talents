@@ -1,3 +1,5 @@
+const fs = require("fs");
+const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
@@ -11,28 +13,13 @@ app.get("/", (_req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
-app.get("/backstage", (_req, res) => {
-  res.sendFile(__dirname + "/public/backstage.html");
-});
-
-app.get("/companies", (_req, res) => {
-  res.sendFile(__dirname + "/public/companies.html");
-});
-
-app.get("/persons", (_req, res) => {
-  res.sendFile(__dirname + "/public/persons.html");
-});
-
-app.get("/person", (_req, res) => {
-  res.sendFile(__dirname + "/public/person.html");
-});
-
-app.get("/addPerson", (_req, res) => {
-  res.sendFile(__dirname + "/public/addPerson.html");
-});
-
-app.get("/company", (_req, res) => {
-  res.sendFile(__dirname + "/public/company.html");
+const fileObjs = fs.readdirSync(__dirname + "/public", { withFileTypes: true });
+fileObjs.forEach(({ name }) => {
+  if (path.extname(name) === ".html") {
+    app.get("/" + path.basename(name, ".html"), (_req, res) => {
+      res.sendFile(`${__dirname}/public/${name}`);
+    });
+  }
 });
 
 const sqlite3 = require("sqlite3").verbose();

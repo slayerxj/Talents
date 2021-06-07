@@ -11,6 +11,10 @@ app.get("/", (_req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
+app.get("/backstage", (_req, res) => {
+  res.sendFile(__dirname + "/public/backstage.html");
+});
+
 app.get("/companies", (_req, res) => {
   res.sendFile(__dirname + "/public/companies.html");
 });

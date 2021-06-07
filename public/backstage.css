@@ -1,0 +1,22 @@
+#mainView {
+  width: 800px;
+  height: 80vh;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#recent-visited {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+table {
+  width: 100%;
+}
+
+#main-search {
+  margin-top: 2rem;
+}

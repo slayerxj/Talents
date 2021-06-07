@@ -1,22 +1,30 @@
-#mainView {
-  width: 800px;
-  height: 80vh;
-  margin: auto;
-
+html {
+  height: 90vh;
+}
+body {
+  min-height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
-#recent-visited {
-  width: 100%;
-  margin-top: 1rem;
+#title {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 5rem;
+  color: white;
+  background-color: #2f5496;
+  margin-right: 5rem;
+}
+#name {
+  text-align: center;
+  font-size: 3rem;
 }
 
-table {
-  width: 100%;
+#content {
+  margin: auto;
+  text-align: center;
+  font-size: 10rem;
 }
 
-#main-search {
-  margin-top: 2rem;
+footer {
+  text-align: right;
 }

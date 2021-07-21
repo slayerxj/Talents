@@ -10,6 +10,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png" />
     <link rel="manifest" href="/favicon_io/site.webmanifest" />
     <link href="homepage.css" rel="stylesheet" type="text/css" />
+    <link href="slide.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -21,9 +22,10 @@
             <ul>
                 <li>公司介绍</li>
                 <li>公司文化</li>
-                <li><a href="#facebook_ads_example">文化1</a></li>
+                <li>文化1</li>
                 <li>文化2</li>
                 <li>文化3</li>
+                <li></li>
                 <li>业务介绍</li>
                 <li><a href="#bus1">业务1</a></li>
                 <li><a href="#bus2">业务2</a></li>
@@ -31,9 +33,31 @@
                 <li><a href="#contact">联系我们</a></li>
             </ul>
         </nav>
-        <div id="motto">
 
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img src="./img/横向图片.png" style="width:100%">
+                <div class="text">Caption Text</div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img src="./img/横向图片1.png" style="width:100%">
+                <div class="text">Caption Two</div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="./img/横向图片2.png" style="width:100%">
+                <div class="text">Caption Three</div>
+            </div>
         </div>
+        <br>
+        <div style="text-align:center">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
         <article>
             <h3>文化1</h3>
             <p>文化详细介绍：家年寶況約象素民寶體養本有，物易起電已數北得式弟人不常拿裡然：以牛型相相。內思有國兒流這動足理安以學新車的可月增破機必同反，只媽家建：器來爭間領散怎的飛常則，然用治持了名。德他認二養作庭應現這何識：電花著後史致言成著以回兒少小，布早來創文。們北常放那市、時用聲本裡人告古何面層研表這萬心身月行時觀復主，路的是化車想？
@@ -76,6 +100,29 @@
         <p>Copyright 2017-2021 by Pophire company. All Rights Reserved.</p>
         <p><a href="https://beian.miit.gov.cn/">沪ICP备2021016662号-1</a></p>
     </footer>
+
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 4000);
+        }
+    </script>
+
 </body>
 
 </html>

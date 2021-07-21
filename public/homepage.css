@@ -1,22 +1,37 @@
 html {
   scroll-behavior: smooth;
+  background-color: #f5f1ea;
 }
 
 body {
   margin: auto;
-  width: 800px;
+  width: 1024px;
 }
 
 header {
   font-size: xx-large;
 }
 
-#motto {
-  background-image: url("./img/横向图片.png");
-  width: 800px;
-  height: 400px;
+nav {
+  background-color: #b69c6d;
+  position: sticky;
+  top: 1px;
+  font-size: x-large;
+  color: white;
+  font-weight: 500;
+  padding: 5px;
+}
+
+ul {
+  margin: 0;
 }
 
 li {
+  padding: 5px;
   display: inline-block;
+}
+
+#motto {
+  width: 1024px;
+  height: 400px;
 }

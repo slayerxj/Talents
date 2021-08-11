@@ -1,6 +1,5 @@
 html {
   scroll-behavior: smooth;
-  background-color: #f5f1ea;
 }
 
 body {
@@ -10,6 +9,22 @@ body {
 
 header {
   font-size: xx-large;
+
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding: 1rem;
+}
+
+#title_english {
+  padding: 0.1rem 0.5rem 0.1rem 0.5rem;
+  background-color: rgb(47, 84, 150);
+}
+
+#title_chinese {
+  font-family: sans-serif;
+  font-size: 35px;
+  padding: 0.7rem;
+  color: rgb(47, 84, 150);
 }
 
 nav {
@@ -47,4 +62,8 @@ li {
 
 .fade img {
   opacity: 0.7;
+}
+
+footer {
+  text-align: center;
 }

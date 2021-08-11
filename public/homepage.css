@@ -27,6 +27,10 @@ header {
   color: rgb(47, 84, 150);
 }
 
+.caption {
+  font-size: 35px;
+}
+
 nav {
   background-color: #b69c6d;
   position: sticky;
